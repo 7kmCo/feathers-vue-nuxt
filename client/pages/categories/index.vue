@@ -7,10 +7,18 @@
         </h1>
       </v-flex>
       <v-flex xs12>
-        <v-form @submit.prevent="newCategory">
-          <v-text-field label="Category title" v-model="category.title" />
-          <v-text-field label="Category slug" v-model="category.slug" />
-          <v-btn type="submit">Create the category</v-btn>
+        <v-form @submit.prevent="newCategory" v-model="valid">
+          <v-text-field
+            label="Category title"
+            v-model="category.title"
+            :rules="notEmptyRules"
+          />
+          <v-text-field
+            label="Category slug"
+            v-model="category.slug"
+            :rules="notEmptyRules"
+          />
+          <v-btn type="submit" :disabled="!valid">Create the category</v-btn>
         </v-form>
       </v-flex>
       <v-flex xs12>
@@ -36,6 +44,7 @@
 
 <script>
 import { mapState, mapGetters, mapActions } from 'vuex'
+import { notEmptyRules } from '~/plugins/validators';
 
 export default {
   data() {
@@ -44,7 +53,8 @@ export default {
       category: {
         title: '',
         slug: ''
-      }
+      },
+      notEmptyRules
     }
   },
   mounted() {

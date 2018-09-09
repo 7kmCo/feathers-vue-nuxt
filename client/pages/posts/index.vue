@@ -7,9 +7,19 @@
         </h1>
       </v-flex>
       <v-flex xs12>
-        <v-form @submit.prevent="newPost">
-          <v-text-field label="Post title" v-model="post.title" />
-          <v-text-field label="Post content" v-model="post.content" />
+        <v-form @submit.prevent="newPost" v-model="valid">
+          <v-text-field
+            label="Post title"
+            v-model="post.title"
+            :rules="notEmptyRules"
+            required
+          />
+          <v-text-field
+            label="Post content"
+            v-model="post.content"
+            :rules="notEmptyRules"
+            required
+          />
             <v-select
               :items="categories"
               item-text="title"
@@ -19,7 +29,7 @@
               multiple
               chips
             ></v-select>
-          <v-btn type="submit">Create the post</v-btn>
+          <v-btn type="submit" :disabled="!valid">Create the post</v-btn>
         </v-form>
       </v-flex>
       <v-flex xs12>
@@ -51,16 +61,18 @@
 
 <script>
 import { mapState, mapGetters, mapActions } from 'vuex'
+import { notEmptyRules } from '~/plugins/validators'
 
 export default {
   data() {
     return {
-      valid: true,
+      valid: false,
       post: {
         title: '',
         content: '',
         terms: []
-      }
+      },
+      notEmptyRules,
     }
   },
   mounted() {
@@ -78,15 +90,17 @@ export default {
     ...mapActions('categories', { findCategories: 'find' }),
     ...mapActions(['setSnackbarNote']),
     async newPost() {
-      const { Post } = this.$FeathersVuex
-      const newPost = new Post(this.post)
-      const createdPost = await newPost.save({})
-      if (createdPost) {
-        this.setSnackbarNote({
-          text: 'New post with title of "' + this.post.title + '" created',
-          color: 'cyan darken-2',
-          timeout: 6000
-        })
+      if (this.valid) {
+        const { Post } = this.$FeathersVuex
+        const newPost = new Post(this.post)
+        const createdPost = await newPost.save({})
+        if (createdPost) {
+          this.setSnackbarNote({
+            text: 'New post with title of "' + this.post.title + '" created',
+            color: 'cyan darken-2',
+            timeout: 6000
+          })
+        }
       }
     }
   },

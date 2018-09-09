@@ -1,0 +1,1 @@
+export const notEmptyRules = [value => !!value || 'Field cannot be empty.']
