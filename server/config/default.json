@@ -1,0 +1,34 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "secret": "8934faea5162f6ebdd56e8b4c7a76c55b17bb01ad5982170bdec33bd5e8f7e1e840d176d8e9bada0087d9e7037525a7d3e2855f043eac7124436bd98a848d8e61d3ee5c95b8929256ba1e97942364273543bc62f9fe45e9eeb06e38bd190c576f43c36720b2f064fc6a129e345f916d57a9bacabc95e0b65df92479e5895860a72ee2cfc7b52f527152ef573ad16b7c4ae3630d1a3f4376bcf1082ee9dbb7c982616ddf34c5cc0801c419a3f7a4253f96fed3f43acfc379519f43bac48d66520eed2b34c40abbdff28d596b51d7de8ab165ff114c5f91c09f3ce78fa0db9f63ba3dea2fc1937c7dcf1fb26d07157cb4911f01d797fcb339a91f9c67966f2d808",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  },
+  "mysql": "mysql://foad:foadyousefi@localhost:8889/feathers-test?charset=utf8mb4"
+}

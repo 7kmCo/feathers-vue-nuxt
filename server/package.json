@@ -1,0 +1,57 @@
+{
+  "name": "feathers-nuxt-starter-server",
+  "description": "Feathers-Nuxt-starter server",
+  "version": "0.0.0",
+  "homepage": "",
+  "main": "src",
+  "keywords": [
+    "feathers"
+  ],
+  "author": {
+    "name": "Foad Yousefi",
+    "email": "foadyousefi@gmail.com"
+  },
+  "contributors": [],
+  "bugs": {},
+  "directories": {
+    "lib": "src",
+    "test": "test/"
+  },
+  "engines": {
+    "node": "^9.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "scripts": {
+    "test": "npm run eslint && npm run mocha",
+    "eslint": "eslint src/. test/. --config .eslintrc.json",
+    "dev": "nodemon src/",
+    "start": "node src/",
+    "mocha": "mocha test/ --recursive --exit"
+  },
+  "dependencies": {
+    "@feathersjs/authentication": "^2.1.9",
+    "@feathersjs/authentication-jwt": "^2.0.3",
+    "@feathersjs/authentication-local": "^1.2.3",
+    "@feathersjs/cli": "^3.8.2",
+    "@feathersjs/configuration": "^2.0.1",
+    "@feathersjs/errors": "^3.3.2",
+    "@feathersjs/express": "^1.2.4",
+    "@feathersjs/feathers": "^3.2.1",
+    "@feathersjs/socketio": "^3.2.3",
+    "compression": "^1.7.3",
+    "cors": "^2.8.4",
+    "feathers-sequelize": "^3.1.2",
+    "helmet": "^3.13.0",
+    "mysql2": "^1.6.1",
+    "sequelize": "^4.38.0",
+    "serve-favicon": "^2.5.0",
+    "winston": "^3.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.5.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.3",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
+  }
+}
