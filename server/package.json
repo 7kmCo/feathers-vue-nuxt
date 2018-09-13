@@ -1,7 +1,7 @@
 {
   "name": "feathers-nuxt-starter-server",
   "description": "Feathers-Nuxt-starter server",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "homepage": "",
   "main": "src",
   "keywords": [
