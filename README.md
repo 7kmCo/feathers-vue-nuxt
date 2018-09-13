@@ -16,7 +16,7 @@ First make sure you have [NodeJS](https://nodejs.org/) and [npm](https://www.npm
 
     ```
     cd path/to/feathers-nuxt-starter/server && npm install
-    cd path/to/feathers-nuxt-starter/client && npm install
+    cd path/to/feathers-nuxt-starter/nuxt && npm install
     ```
 
 3. Start server
