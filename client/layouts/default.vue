@@ -31,6 +31,9 @@ import {mapGetters} from 'vuex'
 
 export default {
   components: { Navbar },
+  async created () {
+    await this.$store.dispatch('auth/authenticate')
+  },
   computed: {
     ...mapGetters([
       'getSnackbarNote'
