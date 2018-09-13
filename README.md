@@ -3,8 +3,10 @@
 
 ## About
 
-This is a starter template for [Feathers](http://feathersjs.com/) in the server and [Nuxt.js](https://nuxtjs.org/) in client. Later on vue.js client also will be added.
+This is a starter template for [Feathers](http://feathersjs.com/) in the server and [Nuxt.js](https://nuxtjs.org/) or [vuejs](https://vuejs.org/) in client.
 For datastore, mySql have been used.
+
+Both clients implementing [feathers-vuex](https://github.com/feathers-plus/feathers-vuex).
 
 ## Getting Started
 
@@ -16,7 +18,8 @@ First make sure you have [NodeJS](https://nodejs.org/) and [npm](https://www.npm
 
     ```
     cd path/to/feathers-nuxt-starter/server && npm install
-    cd path/to/feathers-nuxt-starter/nuxt && npm install
+    cd path/to/feathers-nuxt-starter/nuxt-client && npm install
+    cd path/to/feathers-nuxt-starter/vue-client && npm install
     ```
 
 3. Start server
@@ -28,7 +31,8 @@ First make sure you have [NodeJS](https://nodejs.org/) and [npm](https://www.npm
 4. Start client
 
     ```
-    npm rund dev # With Hot Module Replacement
+    npm rund dev # For nuxt with Hot Module Replacement
+    npm rund serve # For vue with Hot Module Replacement
     ```
 
 You can find more details in each directory.
