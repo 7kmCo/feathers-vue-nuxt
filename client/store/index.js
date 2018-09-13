@@ -1,8 +1,9 @@
 import Vue from 'vue';
-import Vuex from 'vuex';
+import Vuex from 'vuex'
 import feathersVuex from 'feathers-vuex'
-import feathersClient from '~/plugins/feathers-client';
-import localAuth from './localAuth';
+import feathersClient from '~/plugins/feathers-client'
+import localAuth from './localAuth'
+import parseCookies from '~/plugins/parse-cookies'
 
 const { service, auth, FeathersVuex } = feathersVuex(feathersClient, { idField: 'id' })
 
@@ -15,6 +16,13 @@ const Store = () => new Vuex.Store({
   actions: {
     setSnackbarNote (store, payload) {
       store.commit('setSnackbarNote', payload)
+    },
+    nuxtServerInit({ dispatch }, { req }) {
+      const accessToken = parseCookies(req)['feathers-jwt']
+
+      if (accessToken) {
+        return dispatch('auth/authenticate', { strategy: 'jwt', accessToken })
+      }
     }
   },
   mutations: {
