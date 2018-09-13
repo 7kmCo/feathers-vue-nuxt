@@ -19,7 +19,7 @@
 
     <v-navigation-drawer v-model="navbarDrawer" absolute temporary>
       <v-list>
-        <v-list-tile>
+        <v-list-tile class="drawer-list-tile">
           <v-list-tile-content class="drawer-list-header">
             <v-list-tile-title>Drawer List</v-list-tile-title>
             <v-list-tile-sub-title>Drawer list sub header</v-list-tile-sub-title>

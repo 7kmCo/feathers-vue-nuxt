@@ -1,0 +1,48 @@
+{
+  "name": "vue-client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@feathersjs/authentication-client": "^1.0.4",
+    "@feathersjs/feathers": "^3.2.1",
+    "@feathersjs/socketio-client": "^1.1.2",
+    "feathers-vuex": "^1.4.8",
+    "socket.io-client": "^2.1.1",
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.1",
+    "vuetify": "^1.0.19",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@babel/polyfill": "^7.0.0-beta.49",
+    "@vue/cli-plugin-babel": "^3.0.1",
+    "@vue/cli-plugin-eslint": "^3.0.1",
+    "@vue/cli-service": "^3.0.1",
+    "babel-plugin-transform-imports": "^1.4.1",
+    "lint-staged": "^7.2.2",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
+    "vue-cli-plugin-vuetify": "^0.1.6",
+    "vue-template-compiler": "^2.5.17"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "vue-cli-service lint",
+      "git add"
+    ],
+    "*.vue": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}
