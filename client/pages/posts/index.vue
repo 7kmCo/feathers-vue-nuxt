@@ -64,6 +64,7 @@ import { mapState, mapGetters, mapActions } from 'vuex'
 import { notEmptyRules } from '~/plugins/validators'
 
 export default {
+  middleware: 'authenticated',
   data() {
     return {
       valid: false,
