@@ -16,15 +16,9 @@ import {
   VSelect,
   VChip,
   VMenu,
-  VDialog,
   VTextField,
   VCheckbox,
-  VAlert,
-  VSnackbar,
-  VTooltip,
-  VSlider,
-  VImg,
-  VSubheader
+  VSnackbar
 } from 'vuetify'
 
 Vue.use(Vuetify, {
@@ -44,15 +38,9 @@ Vue.use(Vuetify, {
     VSelect,
     VChip,
     VMenu,
-    VDialog,
     VTextField,
     VCheckbox,
-    VAlert,
-    VSnackbar,
-    VTooltip,
-    VSlider,
-    VImg,
-    VSubheader
+    VSnackbar
   },
   theme: {
     primary: '#9c27b0',
