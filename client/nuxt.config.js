@@ -12,6 +12,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Feathers-Nuxt-Starter Client' }
     ],
     link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons' }
     ]
@@ -28,6 +29,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    cssSourceMap: false,
     babel: {
       plugins: [
         ['transform-imports', {
