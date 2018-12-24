@@ -27,14 +27,14 @@ First make sure you have [NodeJS](https://nodejs.org/) and [npm](https://www.npm
 4. Start server
 
     ```
-    npm rund dev # With auto reload on file changes
+    npm run dev # With auto reload on file changes
     ```
 
 5. Start client
 
     ```
-    npm rund dev # For nuxt with Hot Module Replacement
-    npm rund serve # For vue with Hot Module Replacement
+    npm run dev # For nuxt with Hot Module Replacement
+    npm run serve # For vue with Hot Module Replacement
     ```
 
 You can find more details in each directory.
