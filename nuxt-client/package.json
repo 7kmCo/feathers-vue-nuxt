@@ -13,14 +13,14 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "@feathersjs/authentication-client": "^1.0.4",
-    "@feathersjs/feathers": "^3.2.1",
-    "@feathersjs/socketio-client": "^1.1.2",
-    "feathers-vuex": "^1.4.8",
+    "@feathersjs/authentication-client": "^1.0.11",
+    "@feathersjs/feathers": "^3.3.1",
+    "@feathersjs/socketio-client": "^1.2.1",
+    "feathers-vuex": "^1.7.0",
     "js-cookie": "^2.2.0",
-    "nuxt": "^1.0.0",
-    "socket.io-client": "^2.1.1",
-    "vuetify": "^1.2.3"
+    "nuxt": "^1.4.5",
+    "socket.io-client": "^2.2.0",
+    "vuetify": "^1.5.2"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
